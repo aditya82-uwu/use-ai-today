@@ -1,1 +1,17 @@
 @import "tailwindcss";
+@source "../src/**/*.{js,jsx,ts,tsx}";
+
+@theme {
+  --color-background: #0B0F19;
+  --color-surface: #111827;
+  --color-border: #1F2937;
+  --color-primary: #8B5CF6;
+  --color-primaryHover: #A78BFA;
+}
+
+/* GLOBAL PAGE THEME */
+html, body, #root {
+  background: #0B0F19;
+  color: #E5E7EB;
+  min-height: 100%;
+}

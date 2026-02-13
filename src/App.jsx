@@ -1,14 +1,23 @@
-import { useState } from 'react'
-import './App.css'
+import { Routes, Route, Link } from "react-router-dom"
+import Header from './components/Header'
+import HomePage from "./pages/Home/HomePage"
+import AboutPage from "./pages/AboutPage"
+import NotFound from "./pages/NotFound"
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center">
-      <h1 className="text-5xl text-white font-bold">
-        Tailwind v4 Working 🚀
-      </h1>
-    </div>
+    <>
+      <Header />
+      <main className="max-w-6xl mx-auto px-4 py-10">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+
+          {/* Important */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+    </>
   )
 }
 
-export default App
